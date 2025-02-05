@@ -4,36 +4,23 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ice"
-dynamic = ["version"]
-classifiers = [
-  "Development Status :: 5 - Production/Stable",
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: Implementation :: PyPy",
-  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-  "Topic :: Software Development :: Libraries :: Python Modules",
-  "Topic :: Text Processing :: Markup :: HTML",
-]
-# dependencies = ["typing-extensions>=3.10.0.0", "packaging>=20.9"]
+version = "0.1"
+description = "Description of your project"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+license = { text = "MIT" }
 requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas"
+]
 
-[project.optional-dependencies]
-#test = ["pytest>=6.2.4", "syrupy>=4.6.0"]
-#dev = [
-#  "black>=24.2.0",
-#  "flake8>=6.0.0",
-#  "Flake8-pyproject",
-#  "isort>=5.11.2",
-#  "pyright>=1.1.348",
-#  "pre-commit>=2.15.0",
-#  "wheel",
-#  "build",
-#]
+[project.urls]
+homepage = "https://github.com/hchen-lilly/ICE2"
+documentation = "https://github.com/hchen-lilly/ICE2#readme"
+
+[project.scripts]
+synthego_ice = "ice.analysis:single_sanger_analysis_cli"
+synthego_ice_batch = "ice.analysis:multiple_sanger_analysis_cli"
 
 [tool.setuptools]
 packages = ["ice"]
